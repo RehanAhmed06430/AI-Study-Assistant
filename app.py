@@ -1,4 +1,4 @@
-from chains import explanation_chain , notes_chain
+from chains import explanation_chain , notes_chain, interview_chain
 topic = "Binary Search"
 
 print("========== EXPLANATION ==========\n")
@@ -15,3 +15,10 @@ notes = notes_chain.invoke({
 })
 
 print(notes)
+
+print("========== INTERVIEW QUESTIONS ==========\n")
+
+result = interview_chain.invoke({
+    "topic": topic
+})
+print(result)
