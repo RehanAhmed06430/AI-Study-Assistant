@@ -1,7 +1,17 @@
-from models import model
+from chains import explanation_chain , notes_chain
 topic = "Binary Search"
-response = model.invoke(
-    f"Explain {topic} in simple language."
-)
 
-print(response.content)
+print("========== EXPLANATION ==========\n")
+explanation = explanation_chain.invoke({
+    "topic": topic
+})
+
+print(explanation)
+
+print("\n========== SHORT NOTES ==========\n")
+
+notes = notes_chain.invoke({
+    "topic": topic
+})
+
+print(notes)
