@@ -3,10 +3,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 topic = "Two Pointers"
-
+language = "C++"
 
 result = study_chain.invoke({
-    "topic": topic
+    "topic": topic,
+    "language": language
 })
 
 
@@ -23,3 +24,6 @@ print(result["interview"])
 
 print("\n========== QUICK REVISION ==========\n")
 print(result["quickrevision"])
+
+print("\n========== CODE IMPLEMENTATION ==========\n")
+print(result["code"])

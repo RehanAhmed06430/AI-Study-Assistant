@@ -1,4 +1,32 @@
-from langchain_core.prompts import PromptTemplate
+from langchain_core.prompts import PromptTemplate , ChatPromptTemplate 
+
+code_prompt = ChatPromptTemplate.from_template(
+    """
+    Generate a clean and beginner-friendly implementation for the following topic.
+
+    Topic: {topic}
+    Programming Language: {language}
+
+    Requirements:
+    - Provide a correct implementation.
+    - Use standard and commonly used syntax.
+    - Keep the code easy to understand.
+    - Add brief comments where useful.
+    - Mention the time and space complexity after the code.
+    - Do not include unnecessary explanation.
+
+    Return the answer in this format:
+
+    Code:
+    <code>
+
+    Time Complexity:
+    <complexity>
+
+    Space Complexity:
+    <complexity>
+    """
+)
 
 explain_prompt = PromptTemplate(
     template = "Explain {topic} in simple language.",
