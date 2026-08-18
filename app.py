@@ -1,24 +1,22 @@
-from chains import explanation_chain , notes_chain, interview_chain
-topic = "Binary Search"
+from chains import study_chain
+from dotenv import load_dotenv
+load_dotenv()
 
-print("========== EXPLANATION ==========\n")
-explanation = explanation_chain.invoke({
+topic = "Langchain"
+
+
+result = study_chain.invoke({
     "topic": topic
 })
 
-print(explanation)
+
+print("\n========== EXPLANATION ==========\n")
+print(result["explanation"])
+
 
 print("\n========== SHORT NOTES ==========\n")
+print(result["notes"])
 
-notes = notes_chain.invoke({
-    "topic": topic
-})
 
-print(notes)
-
-print("========== INTERVIEW QUESTIONS ==========\n")
-
-result = interview_chain.invoke({
-    "topic": topic
-})
-print(result)
+print("\n========== INTERVIEW QUESTIONS ==========\n")
+print(result["interview"]) 
