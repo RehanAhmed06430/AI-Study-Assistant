@@ -32,3 +32,8 @@ Do not provide answers unless explicitly requested.
 """,    
     input_variables = ['topic']
 )
+
+quickrevision_prompt = PromptTemplate(
+    template="Provide a quick revision of {topic} in bullet points.",
+    input_variables = ['topic']
+)
